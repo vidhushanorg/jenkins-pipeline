@@ -21,7 +21,8 @@ pipeline {
 
         stage('Java Application') {
             agent {
-                docker { image 'openjdk:17-jdk' }
+                docker { image 'eclipse-temurin:17-jdk'
+            label 'docker' }
             }
             steps {
                 echo "Compiling and running HelloWorld.java in multi-agent folder..."
